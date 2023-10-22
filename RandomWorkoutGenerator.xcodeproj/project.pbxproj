@@ -11,7 +11,6 @@
 		19134CF22AE5583D00CEA8A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134CF12AE5583D00CEA8A3 /* ContentView.swift */; };
 		19134CF42AE5584000CEA8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19134CF32AE5584000CEA8A3 /* Assets.xcassets */; };
 		19134CF72AE5584000CEA8A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19134CF62AE5584000CEA8A3 /* Preview Assets.xcassets */; };
-		19134CF92AE5584000CEA8A3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134CF82AE5584000CEA8A3 /* Persistence.swift */; };
 		19134CFC2AE5584000CEA8A3 /* RandomWorkoutGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19134CFA2AE5584000CEA8A3 /* RandomWorkoutGenerator.xcdatamodeld */; };
 		19134D062AE5584000CEA8A3 /* RandomWorkoutGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134D052AE5584000CEA8A3 /* RandomWorkoutGeneratorTests.swift */; };
 		19134D102AE5584000CEA8A3 /* RandomWorkoutGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134D0F2AE5584000CEA8A3 /* RandomWorkoutGeneratorUITests.swift */; };
@@ -41,7 +40,6 @@
 		19134CF12AE5583D00CEA8A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		19134CF32AE5584000CEA8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19134CF62AE5584000CEA8A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		19134CF82AE5584000CEA8A3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		19134CFB2AE5584000CEA8A3 /* RandomWorkoutGenerator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RandomWorkoutGenerator.xcdatamodel; sourceTree = "<group>"; };
 		19134D012AE5584000CEA8A3 /* RandomWorkoutGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomWorkoutGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19134D052AE5584000CEA8A3 /* RandomWorkoutGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWorkoutGeneratorTests.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				19134CEF2AE5583D00CEA8A3 /* RandomWorkoutGeneratorApp.swift */,
 				19134CF12AE5583D00CEA8A3 /* ContentView.swift */,
 				19134CF32AE5584000CEA8A3 /* Assets.xcassets */,
-				19134CF82AE5584000CEA8A3 /* Persistence.swift */,
 				19134CFA2AE5584000CEA8A3 /* RandomWorkoutGenerator.xcdatamodeld */,
 				19134CF52AE5584000CEA8A3 /* Preview Content */,
 			);
@@ -263,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19134CF92AE5584000CEA8A3 /* Persistence.swift in Sources */,
 				19134CF22AE5583D00CEA8A3 /* ContentView.swift in Sources */,
 				19134CFC2AE5584000CEA8A3 /* RandomWorkoutGenerator.xcdatamodeld in Sources */,
 				19134CF02AE5583D00CEA8A3 /* RandomWorkoutGeneratorApp.swift in Sources */,
