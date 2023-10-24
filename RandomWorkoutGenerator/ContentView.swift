@@ -10,40 +10,61 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let muscles = ["Chest", "Triceps", "Back", "Biceps", "Shoulders", "Quads", "Hamstrings", "Glutes", "Calves"]
+    let muscles: [String: String] = [
+        "Chest": "pectoralis",
+        "Triceps": "triceps",
+        "Back": "lats",
+        "Biceps": "biceps",
+        "Shoulders": "delts",
+        "Quads": "quads",
+        "Hamstrings": "hamstrings",
+        "Glutes": "glutes",
+        "Calves": "calves"]
+    
+    // chest 158
+    // triceps 141
+    // lats 81
+    // biceps 151
+    // delts 143
+    // quads 44
+    // hamstrings 28
+    // glutes 144
+    // calves 59
     @State private var selectedMuscles = Set<String>()
     
     var body: some View {
-        VStack {
-            List(muscles, id: \.self, selection: $selectedMuscles) { muscle in HStack {
-                    Text(muscle)
-                    Spacer()
-                    if selectedMuscles.contains(muscle) {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.blue)
+        NavigationView {
+            VStack {
+                List(Array(muscles.keys), id: \.self, selection: $selectedMuscles) { muscle in HStack {
+                        Text(muscle)
+                        Spacer()
+                        if selectedMuscles.contains(muscles[muscle]!) {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if selectedMuscles.contains(muscles[muscle]!) {
+                            selectedMuscles.remove(muscles[muscle]!)
+                            print(selectedMuscles)
+                        } else {
+                            selectedMuscles.insert(muscles[muscle]!)
+                            print(selectedMuscles)
+                        }
                     }
                 }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    if selectedMuscles.contains(muscle) {
-                        selectedMuscles.remove(muscle)
-                    } else {
-                        selectedMuscles.insert(muscle)
-                    }
+                .listStyle(InsetListStyle())
+                
+                NavigationLink(destination: ExerciseCountView(selectedMuscles: selectedMuscles)) {
+                    Text("Next")
                 }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }
-            .listStyle(InsetListStyle())
-            
-            Button(action: {
-                print(selectedMuscles)
-            }) {
-                Text("Next")
-            }
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            }
+        }
 
         }
 }
