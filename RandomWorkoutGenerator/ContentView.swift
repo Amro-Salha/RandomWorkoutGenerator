@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     let muscles: [String: String] = [
-        "Chest": "pectoralis",
+        "Chest": "pectorals",
         "Triceps": "triceps",
         "Back": "lats",
         "Biceps": "biceps",
@@ -35,6 +35,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text("Which muscles do you want to work out today?")
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical)
+                    .frame(width: 250.0)
                 List(Array(muscles.keys), id: \.self, selection: $selectedMuscles) { muscle in HStack {
                         Text(muscle)
                         Spacer()

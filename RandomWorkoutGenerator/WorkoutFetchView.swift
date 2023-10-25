@@ -31,24 +31,26 @@ struct WorkoutFetchView: View {
                 ExerciseListView(exercises: exercises, exerciseCount: exerciseCount, selectedMuscles: selectedMuscles)
             }
         }.onAppear {
-            isLoading = true
-            let dispatchGroup = DispatchGroup()
-
-            for muscle in selectedMuscles {
-                dispatchGroup.enter()
-                fetchExercises(for: muscle) { result in
-                    switch result {
-                    case .success(let fetchedExercises):
-                        exercises.append(contentsOf: fetchedExercises)
-                    case .failure(let error):
-                        print("Error fetching exercises for \(muscle): \(error)")
+            if exercises.count != exerciseCount * selectedMuscles.count {
+                isLoading = true
+                let dispatchGroup = DispatchGroup()
+                
+                for muscle in selectedMuscles {
+                    dispatchGroup.enter()
+                    fetchExercises(for: muscle) { result in
+                        switch result {
+                        case .success(let fetchedExercises):
+                            exercises.append(contentsOf: fetchedExercises)
+                        case .failure(let error):
+                            print("Error fetching exercises for \(muscle): \(error)")
+                        }
+                        dispatchGroup.leave()
                     }
-                    dispatchGroup.leave()
                 }
-            }
-
-            dispatchGroup.notify(queue: .main) {
-                isLoading = false
+                
+                dispatchGroup.notify(queue: .main) {
+                    isLoading = false
+                }
             }
         }
     }

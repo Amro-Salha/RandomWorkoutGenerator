@@ -20,6 +20,7 @@
 		19134D232AE7F8E300CEA8A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 19134D222AE7F8E300CEA8A3 /* .gitignore */; };
 		19134D252AE7FC8000CEA8A3 /* WorkoutFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134D242AE7FC8000CEA8A3 /* WorkoutFetchView.swift */; };
 		19134D272AE81DF000CEA8A3 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134D262AE81DF000CEA8A3 /* ExerciseListView.swift */; };
+		19134D292AE85DD200CEA8A3 /* ExerciseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19134D282AE85DD200CEA8A3 /* ExerciseDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		19134D222AE7F8E300CEA8A3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		19134D242AE7FC8000CEA8A3 /* WorkoutFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFetchView.swift; sourceTree = "<group>"; };
 		19134D262AE81DF000CEA8A3 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		19134D282AE85DD200CEA8A3 /* ExerciseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				19134D222AE7F8E300CEA8A3 /* .gitignore */,
 				19134D242AE7FC8000CEA8A3 /* WorkoutFetchView.swift */,
 				19134D262AE81DF000CEA8A3 /* ExerciseListView.swift */,
+				19134D282AE85DD200CEA8A3 /* ExerciseDetailsView.swift */,
 			);
 			path = RandomWorkoutGenerator;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				19134CF02AE5583D00CEA8A3 /* RandomWorkoutGeneratorApp.swift in Sources */,
 				19134D272AE81DF000CEA8A3 /* ExerciseListView.swift in Sources */,
 				19134D252AE7FC8000CEA8A3 /* WorkoutFetchView.swift in Sources */,
+				19134D292AE85DD200CEA8A3 /* ExerciseDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
