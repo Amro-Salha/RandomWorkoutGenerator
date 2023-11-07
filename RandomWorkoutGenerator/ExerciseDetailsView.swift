@@ -33,6 +33,7 @@ struct ExerciseDetailsView: View {
 struct ExerciseDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseDetailsView(exercise: Exercise(
+            id: "1",
             name: "Weighted standing curl",
             target: "biceps",
             gifUrl: "https://v2.exercisedb.io/image/tzLIV2Ep5peiAt",

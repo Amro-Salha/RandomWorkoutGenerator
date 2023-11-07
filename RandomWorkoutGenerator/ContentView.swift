@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+struct Exercise: Codable, Equatable {
+    let id: String
+    let name: String
+    let target: String
+    let gifUrl: String
+    let instructions: [String]
+}
+
 
 struct ContentView: View {
     
@@ -21,15 +29,6 @@ struct ContentView: View {
         "Glutes": "glutes",
         "Calves": "calves"]
     
-    // chest 158
-    // triceps 141
-    // lats 81
-    // biceps 151
-    // delts 143
-    // quads 44
-    // hamstrings 28
-    // glutes 144
-    // calves 59
     @State private var selectedMuscles = Set<String>()
     
     var body: some View {
@@ -60,7 +59,7 @@ struct ContentView: View {
                 }
                 .listStyle(InsetListStyle())
                 
-                NavigationLink(destination: ExerciseCountView(selectedMuscles: selectedMuscles)) {
+                NavigationLink(destination: ExerciseListView(selectedMuscles: selectedMuscles)) {
                     Text("Next")
                 }
                 .padding()

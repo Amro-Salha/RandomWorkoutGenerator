@@ -16,3 +16,4 @@ struct RandomWorkoutGeneratorApp: App {
         }
     }
 }
+
