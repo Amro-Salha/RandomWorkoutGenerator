@@ -16,17 +16,25 @@ struct ExerciseDetailsView: View {
     var body: some View {
         VStack {
             Text(exercise.name)
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.12156862745098039))
+                .multilineTextAlignment(.center)
+                .padding(.vertical)
+                .frame(width: 250.0)
             Spacer()
             AnimatedImage(gifURL: URL(string: exercise.gifUrl)!, isLoading: $isLoading)
                 .overlay(
                     Group {
                         if isLoading {
                             ProgressView("Loading Animation...")
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                         }
                     }
                 )
             Spacer()
         }
+        .background(Color(red: 0.050980392156862744, green: 0.10196078431372549, blue: 0.1607843137254902))
     }
 }
 

@@ -20,6 +20,10 @@ struct ExerciseListView: View {
             Text("Exercises")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.12156862745098039))
+                .multilineTextAlignment(.center)
+                .padding(.vertical)
+                .frame(width: 250.0)
             ScrollView{
                 ForEach(Array(selectedMuscles).sorted(), id: \.self) { muscle in
                     Text(muscle.capitalized)
@@ -66,11 +70,17 @@ struct ExerciseListView: View {
                         Text("Add new exercise")
                     }
                 }
+                .padding(.vertical)
+                .background(Color(red: 0.07450980392156863, green: 0.13333333333333333, blue: 0.2))
+                .cornerRadius(/*@START_MENU_TOKEN@*/30.0/*@END_MENU_TOKEN@*/)
+                
             }
             .onAppear {
                 self.exercises = UserDefaults.standard.fetchAllExercises() ?? [:]
             }
+            
         }
+        .background(Color(red: 0.051, green: 0.10196078431372549, blue: 0.1607843137254902).edgesIgnoringSafeArea(.all))
     }
     
     func fetchExercises(for muscle: String, completion: @escaping (Result<Exercise, Error>) -> Void) {

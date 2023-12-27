@@ -27,49 +27,68 @@ struct ContentView: View {
         "Quads": "quads",
         "Hamstrings": "hamstrings",
         "Glutes": "glutes",
-        "Calves": "calves"]
+        "Calves": "calves"
+    ]
     
     @State private var selectedMuscles = Set<String>()
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Which muscles do you want to work out today?")
-                    .multilineTextAlignment(.center)
-                    .padding(.vertical)
-                    .frame(width: 250.0)
-                List(Array(muscles.keys), id: \.self, selection: $selectedMuscles) { muscle in HStack {
+            ZStack {
+                VStack {
+                    Text("Which muscles do you want to work out today?")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.12156862745098039))
+                        .multilineTextAlignment(.center)
+                        .padding(.vertical)
+                        .frame(width: 250.0)
+                    
+          
+                    List(Array(muscles.keys).sorted(), id: \.self, selection: $selectedMuscles) { muscle in HStack {
                         Text(muscle)
+                            .foregroundColor(Color.white)
+                            .padding(.vertical)
+                        
                         Spacer()
-                        if selectedMuscles.contains(muscles[muscle]!) {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.blue)
+                        
+                            if selectedMuscles.contains(muscles[muscle]!) {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(Color(red: 0.12941176470588237, green: 0.7607843137254902, blue: 0.4627450980392157))
+                            }
                         }
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        if selectedMuscles.contains(muscles[muscle]!) {
-                            selectedMuscles.remove(muscles[muscle]!)
-                            print(selectedMuscles)
-                        } else {
-                            selectedMuscles.insert(muscles[muscle]!)
-                            print(selectedMuscles)
+                        .listRowBackground(Color(red: 0.07450980392156863, green: 0.13333333333333333, blue: 0.2))
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if selectedMuscles.contains(muscles[muscle]!) {
+                                selectedMuscles.remove(muscles[muscle]!)
+                            } else {
+                                selectedMuscles.insert(muscles[muscle]!)
+                            }
                         }
-                    }
-                }
-                .listStyle(InsetListStyle())
-                
-                NavigationLink(destination: ExerciseListView(selectedMuscles: selectedMuscles)) {
-                    Text("Next")
-                }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-            }
-        }
 
+                    }
+                    .listStyle(InsetListStyle())
+                    .cornerRadius(20)
+                    .padding(.all)
+                    .background(Color(red: 0.051, green: 0.10196078431372549, blue: 0.1607843137254902).edgesIgnoringSafeArea(.all))
+                    
+                    
+                    NavigationLink(destination: ExerciseListView(selectedMuscles: selectedMuscles)) {
+                        Text("NEXT")
+                            .fontWeight(.bold)
+                    }
+                    .padding()
+                    .background(Color(red: 0.165, green: 0.2196078431372549, blue: 0.2784313725490196))
+                    .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.12156862745098039))
+                    .cornerRadius(8)
+                }
+                
+            }
+            .background(Color(red: 0.050980392156862744, green: 0.10196078431372549, blue: 0.1607843137254902))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
